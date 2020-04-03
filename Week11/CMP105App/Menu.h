@@ -26,4 +26,9 @@ private:
 	Input* input;
 	GameState* gameState;
 	AudioManager* audio;
+
+	// Add your object here
+	sf::Font font;
+	sf::Text text;
+
 };
