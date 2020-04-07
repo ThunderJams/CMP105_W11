@@ -35,10 +35,6 @@ void Menu::handleInput(float dt)
 // Update game objects
 void Menu::update(float dt)
 {
-	if (input->isKeyDown(sf::Keyboard::Enter)) {
-		audio->stopAllMusic();
-		gameState->setCurrentState(State::LEVEL);
-	}
 	
 	if (input->isKeyDown(sf::Keyboard::Escape)) {
 		window->close();
@@ -46,6 +42,11 @@ void Menu::update(float dt)
 
 	if (audio->getMusic()->getStatus() == sf::SoundSource::Stopped) {
 		audio->playMusicbyName("cantina");
+	}
+
+	if (input->isKeyDown(sf::Keyboard::Enter)) {
+		audio->stopAllMusic();
+		gameState->setCurrentState(State::LEVEL);
 	}
 }
 
